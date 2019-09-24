@@ -7,3 +7,19 @@ https://dnd.wizards.com/articles/features/systems-reference-document-srd
 The SQL script is named **open5e.sql**  
 It can be loaded into a MySQL database using the command line:  
 mysql -u [username] -p[password] [dbname] < open5e.sql
+
+Tables include:  
+Armors  
+Classes  
+Conditions  
+Gods  
+Items  
+MagicItems  
+MonsterActions  
+Monsters  
+Races  
+Sections  
+Spells  
+Weapons  
+
+

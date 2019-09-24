@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `Classes`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Classes` (
   `CID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
   `descr` text,
   `hit_dice` varchar(255) DEFAULT NULL,
   `hp_at_1st_level` varchar(255) DEFAULT NULL,
@@ -40,7 +40,8 @@ CREATE TABLE `Classes` (
   `subtypes_name` varchar(255) DEFAULT NULL,
   `archetypes_name` varchar(255) DEFAULT NULL,
   `archetypes_descr` text,
-  PRIMARY KEY (`CID`)
+  PRIMARY KEY (`CID`),
+  UNIQUE KEY `un_name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -63,9 +64,10 @@ DROP TABLE IF EXISTS `Conditions`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Conditions` (
   `ConID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
   `descr` text,
-  PRIMARY KEY (`ConID`)
+  PRIMARY KEY (`ConID`),
+  UNIQUE KEY `un_name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -88,12 +90,13 @@ DROP TABLE IF EXISTS `MagicItems`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `MagicItems` (
   `MagID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
   `type` varchar(255) DEFAULT NULL,
   `descr` text,
   `rarity` varchar(255) DEFAULT NULL,
   `requires_attunement` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`MagID`)
+  PRIMARY KEY (`MagID`),
+  UNIQUE KEY `un_name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=239 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -147,7 +150,7 @@ DROP TABLE IF EXISTS `Monsters`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Monsters` (
   `MID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
   `size` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `subtype` varchar(255) DEFAULT NULL,
@@ -204,7 +207,8 @@ CREATE TABLE `Monsters` (
   `special_abilities` varchar(255) DEFAULT NULL,
   `speed_lightwalking` int(11) DEFAULT NULL,
   `speed_notes` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`MID`)
+  PRIMARY KEY (`MID`),
+  UNIQUE KEY `un_name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=731 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -227,7 +231,7 @@ DROP TABLE IF EXISTS `Races`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Races` (
   `RID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
   `descr` text,
   `asi_descr` varchar(255) DEFAULT NULL,
   `asi_0_attributes_0` varchar(255) DEFAULT NULL,
@@ -259,7 +263,8 @@ CREATE TABLE `Races` (
   `asi_4_value` int(11) DEFAULT NULL,
   `asi_5_attributes_0` varchar(255) DEFAULT NULL,
   `asi_5_value` int(11) DEFAULT NULL,
-  PRIMARY KEY (`RID`)
+  PRIMARY KEY (`RID`),
+  UNIQUE KEY `un_name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -282,10 +287,11 @@ DROP TABLE IF EXISTS `Sections`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Sections` (
   `SecID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
   `descr` text,
   `parent` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`SecID`)
+  PRIMARY KEY (`SecID`),
+  UNIQUE KEY `un_name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -308,7 +314,7 @@ DROP TABLE IF EXISTS `Spells`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Spells` (
   `SID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
   `descr` text,
   `higher_level` text,
   `page` varchar(255) DEFAULT NULL,
@@ -325,7 +331,8 @@ CREATE TABLE `Spells` (
   `dnd_class` varchar(255) DEFAULT NULL,
   `archetype` varchar(255) DEFAULT NULL,
   `circles` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`SID`)
+  PRIMARY KEY (`SID`),
+  UNIQUE KEY `un_name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=320 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -348,7 +355,7 @@ DROP TABLE IF EXISTS `Weapons`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Weapons` (
   `WID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
   `category` varchar(255) DEFAULT NULL,
   `cost` varchar(255) DEFAULT NULL,
   `damage_dice` varchar(255) DEFAULT NULL,
@@ -359,7 +366,8 @@ CREATE TABLE `Weapons` (
   `properties_2` varchar(255) DEFAULT NULL,
   `properties` varchar(255) DEFAULT NULL,
   `properties_3` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`WID`)
+  PRIMARY KEY (`WID`),
+  UNIQUE KEY `un_name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -382,4 +390,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-24 11:44:40
+-- Dump completed on 2019-09-24 12:26:12

@@ -143,6 +143,33 @@ INSERT INTO `Gods` VALUES (1,'Daghdha','Celtic','god of weather and crops','CG',
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Items`
+--
+
+DROP TABLE IF EXISTS `Items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Items` (
+  `IID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `cost_gp` decimal(10,2) NOT NULL,
+  `weight_pounds` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`IID`),
+  UNIQUE KEY `un_name` (`name`)
+) ENGINE=MyISAM AUTO_INCREMENT=139 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Items`
+--
+
+LOCK TABLES `Items` WRITE;
+/*!40000 ALTER TABLE `Items` DISABLE KEYS */;
+INSERT INTO `Items` VALUES (1,'Abacus',2.00,2.00),(2,'Acid (vial)',25.00,1.00),(3,'Alchemist fire (flask)',50.00,1.00),(4,'Arrows (20)',1.00,1.00),(5,'Blowgun needles (50)',1.00,1.00),(6,'Crossbow bolts (20)',1.00,1.50),(7,'Sling bullets (20)',4.00,1.50),(8,'Amulet',5.00,1.00),(9,'Antitoxin (vial)',50.00,0.00),(10,'Crystal',10.00,1.00),(11,'Orb',20.00,3.00),(12,'Rod',10.00,2.00),(13,'Staff',5.00,4.00),(14,'Wand',10.00,1.00),(15,'Backpack',2.00,5.00),(16,'Ball bearings (bag of 1,000)',1.00,2.00),(17,'Barrel',2.00,70.00),(18,'Basket',4.00,2.00),(19,'Bedroll',1.00,7.00),(20,'Bell',1.00,0.00),(21,'Blanket',5.00,3.00),(22,'Block and tackle',1.00,5.00),(23,'Book',25.00,5.00),(24,'Bottle, glass',2.00,2.00),(25,'Bucket',5.00,2.00),(26,'Caltrops (bag of 20)',1.00,2.00),(27,'Candle',1.00,0.00),(28,'Case, crossbow bolt',1.00,1.00),(29,'Case, map or scroll',1.00,1.00),(30,'Chain (10 feet)',5.00,10.00),(31,'Chalk (1 piece)',1.00,0.00),(32,'Chest',5.00,25.00),(33,'Clothes, common',5.00,3.00),(34,'Clothes, costume',5.00,4.00),(35,'Clothes, fine',15.00,6.00),(36,'Clothes, traveling',2.00,4.00),(37,'Component pouch',25.00,2.00),(38,'Crowbar',2.00,5.00),(39,'Sprig of mistletoe',1.00,0.00),(40,'Totem',1.00,0.00),(41,'Wooden staff',5.00,4.00),(42,'Yew wand',10.00,1.00),(43,'Emblem',5.00,0.00),(44,'Fishing tackle',1.00,4.00),(45,'Flask or tankard',2.00,1.00),(46,'Grappling hook',2.00,4.00),(47,'Hammer',1.00,3.00),(48,'Hammer, sledge',2.00,10.00),(49,'Holy water (flask)',25.00,1.00),(50,'Hourglass',25.00,1.00),(51,'Hunting trap',5.00,25.00),(52,'Ink (1 ounce bottle)',10.00,0.00),(53,'Ink pen',2.00,0.00),(54,'Jug or pitcher',2.00,4.00),(55,'Kit, climbing',25.00,12.00),(56,'Kit, disguise',25.00,3.00),(57,'Kit, forgery',15.00,5.00),(58,'Kit, herbalism',5.00,3.00),(59,'Kit, healer',5.00,3.00),(60,'Kit, mess',2.00,1.00),(61,'Kit, poisoner',50.00,2.00),(62,'Ladder (10-foot)',1.00,25.00),(63,'Lamp',5.00,1.00),(64,'Lantern, bullseye',10.00,2.00),(65,'Lantern, hooded',5.00,2.00),(66,'Lock',10.00,1.00),(67,'Magnifying glass',100.00,0.00),(68,'Manacles',2.00,6.00),(69,'Mirror, steel',5.00,0.50),(70,'Oil (flask)',1.00,1.00),(71,'Paper (one sheet)',2.00,0.00),(72,'Parchment (one sheet)',1.00,0.00),(73,'Perfume (vial)',5.00,0.00),(74,'Pick, miner',2.00,10.00),(75,'Piton',5.00,0.25),(76,'Poison, basic (vial)',100.00,0.00),(77,'Pole (10-foot)',5.00,7.00),(78,'Pot, iron',2.00,10.00),(79,'Potion of healing',50.00,0.50),(80,'Pouch',5.00,1.00),(81,'Quiver',1.00,1.00),(82,'Ram, portable',4.00,35.00),(83,'Rations (1 day)',5.00,2.00),(84,'Reliquary',5.00,2.00),(85,'Robes',1.00,4.00),(86,'Rope, hempen (50 feet)',1.00,10.00),(87,'Rope, silk (50 feet)',10.00,5.00),(88,'Sack',1.00,0.50),(89,'Scale, merchant',5.00,3.00),(90,'Sealing wax',5.00,0.00),(91,'Shovel',2.00,5.00),(92,'Signal whistle',5.00,0.00),(93,'Signet ring',5.00,0.00),(94,'Soap',2.00,0.00),(95,'Spellbook',50.00,3.00),(96,'Spikes, iron (10)',1.00,5.00),(97,'Spyglass',1000.00,1.00),(98,'Tent, two-person',2.00,20.00),(99,'Tinderbox',5.00,1.00),(100,'Torch',1.00,1.00),(101,'Vial',1.00,0.00),(102,'Waterskin (full)',2.00,5.00),(103,'Whetstone',1.00,1.00),(104,'Alchemist supplies',50.00,8.00),(105,'Brewer supplies',20.00,9.00),(106,'Calligrapher supplies',10.00,5.00),(107,'Carpenter tools',8.00,6.00),(108,'Cartographer tools',15.00,6.00),(109,'Cobbler tools',5.00,5.00),(110,'Cook utensils',1.00,8.00),(111,'Glassblower tools',30.00,5.00),(112,'Jeweler tools',25.00,2.00),(113,'Leatherworker tools',5.00,5.00),(114,'Mason tools',10.00,8.00),(115,'Painter supplies',10.00,5.00),(116,'Potter tools',10.00,3.00),(117,'Smith tools',20.00,8.00),(118,'Tinker tools',50.00,10.00),(119,'Weaver tools',1.00,5.00),(120,'Woodcarver tools',1.00,5.00),(121,'Disguise kit',25.00,3.00),(122,'Forgery kit',15.00,5.00),(123,'Dice set',1.00,0.00),(124,'Playing card set',5.00,0.00),(125,'Herbalism kit',5.00,3.00),(126,'Bagpipes',30.00,6.00),(127,'Drum',6.00,3.00),(128,'Dulcimer',25.00,10.00),(129,'Flute',2.00,1.00),(130,'Lute',35.00,2.00),(131,'Lyre',30.00,2.00),(132,'Horn',3.00,2.00),(133,'Pan flute',12.00,2.00),(134,'Shawm',2.00,1.00),(135,'Viol',30.00,1.00),(136,'Navigator tools',25.00,2.00),(137,'Poisoner kit',50.00,2.00),(138,'Thieves tools',25.00,1.00);
+/*!40000 ALTER TABLE `Items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `MagicItems`
 --
 
@@ -451,4 +478,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-24 14:26:05
+-- Dump completed on 2019-09-24 15:19:24

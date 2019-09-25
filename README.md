@@ -1,5 +1,5 @@
 # open5e-sql
-An SQL script, including DDL, for loading the open5e Open Game Content into a relational database.
+An SQL script for loading the Wizards Systems Reference Document (SRD) Open Game Content into a relational database.
 
 The original content and its associated Open-Gaming License can be found here:
 https://dnd.wizards.com/articles/features/systems-reference-document-srd

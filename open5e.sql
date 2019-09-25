@@ -170,6 +170,34 @@ INSERT INTO `Items` VALUES (1,'Abacus',2.00,2.00),(2,'Acid (vial)',25.00,1.00),(
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Languages`
+--
+
+DROP TABLE IF EXISTS `Languages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Languages` (
+  `LID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `races` varchar(255) NOT NULL,
+  `script` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`LID`),
+  UNIQUE KEY `un_name` (`name`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Languages`
+--
+
+LOCK TABLES `Languages` WRITE;
+/*!40000 ALTER TABLE `Languages` DISABLE KEYS */;
+INSERT INTO `Languages` VALUES (1,'Common','Standard','Humans','Common'),(2,'Dwarvish','Standard','Dwarves','Dwarvish'),(3,'Elvish','Standard','Elves','Elvish'),(4,'Giant','Standard','Ogres and Giants','Dwarvish'),(5,'Gnomish','Standard','Gnomes','Dwarvish'),(6,'Goblin','Standard','Goblinoids','Dwarvish'),(7,'Halfling','Standard','Halflings','Common'),(8,'Orc','Standard','Orcs','Dwarvish'),(9,'Abyssal','Exotic','Demons','Infernal'),(10,'Celestial','Exotic','Celestials','Celestial'),(11,'Draconic','Exotic','Dragons and Dragonborn','Draconic'),(12,'Deep Speech','Exotic','Aboleths and Cloakers',NULL),(13,'Infernal','Exotic','Devils','Infernal'),(14,'Primordial','Exotic','Elementals','Dwarvish'),(15,'Sylvan','Exotic','Fey creatures','Elvish'),(16,'Undercommon','Exotic','Underworld traders','Elvish');
+/*!40000 ALTER TABLE `Languages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `MagicItems`
 --
 
@@ -478,4 +506,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-24 15:34:13
+-- Dump completed on 2019-09-25 12:51:35

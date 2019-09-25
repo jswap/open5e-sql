@@ -20,6 +20,7 @@ MonsterActions
 Monsters  
 Races  
 Sections  
+Services  
 Spells  
 Weapons  
 

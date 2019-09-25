@@ -14,6 +14,7 @@ Classes
 Conditions  
 Gods  
 Items  
+Languages  
 MagicItems  
 MonsterActions  
 Monsters  
